@@ -11,13 +11,16 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('loot', function (Blueprint $table) {
-            $table->id();
+        Schema::create('hero_data', function (Blueprint $table) {
+            $table->foreignId('hero_id')->constrained();
             $table->string('name', 52);
+            $table->string('nick', 24)->nullable();
             $table->tinyText('description');
-            $table->enum('type', ['ARMOUR', 'WEAPON', '']);
             $table->string('profile_img');
-            $table->timestamps();
+            $table->smallInteger('health');
+            $table->smallInteger('strength');
+            $table->smallInteger('agility');
+            $table->smallInteger('luck');
         });
     }
 
@@ -26,6 +29,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('loot');
+        Schema::dropIfExists('hero_data');
     }
 };

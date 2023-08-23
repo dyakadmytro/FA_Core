@@ -13,6 +13,9 @@ return new class extends Migration
     {
         Schema::create('effects', function (Blueprint $table) {
             $table->id();
+            $table->string('name', 52);
+            $table->tinyText('description');
+            $table->string('profile_img');
             $table->timestamps();
         });
     }
