@@ -8,4 +8,12 @@ use Illuminate\Database\Eloquent\Model;
 class Hero extends Model
 {
     use HasFactory;
+
+    public function data() {
+        return $this->hasOne(HeroData::class);
+    }
+
+    public function user() {
+        return $this->belongsTo(User::class);
+    }
 }

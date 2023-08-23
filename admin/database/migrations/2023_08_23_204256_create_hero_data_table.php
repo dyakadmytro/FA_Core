@@ -14,13 +14,13 @@ return new class extends Migration
         Schema::create('hero_data', function (Blueprint $table) {
             $table->foreignId('hero_id')->constrained();
             $table->string('name', 52);
-            $table->string('nick', 24)->nullable();
+            $table->string('nick', 24)->unique()->nullable();
             $table->tinyText('description');
             $table->string('profile_img');
-            $table->smallInteger('health');
-            $table->smallInteger('strength');
-            $table->smallInteger('agility');
-            $table->smallInteger('luck');
+            $table->smallInteger('health')->unsigned();
+            $table->smallInteger('strength')->unsigned();
+            $table->smallInteger('agility')->unsigned();
+            $table->smallInteger('luck')->unsigned();
         });
     }
 
