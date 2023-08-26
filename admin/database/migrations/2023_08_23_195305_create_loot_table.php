@@ -14,8 +14,11 @@ return new class extends Migration
         Schema::create('loot', function (Blueprint $table) {
             $table->id();
             $table->string('name', 52);
+            $table->smallInteger('health')->unsigned();
+            $table->smallInteger('wear')->unsigned();
             $table->tinyText('description');
-            $table->enum('type', ['ARMOUR', 'WEAPON', '']);
+            $table->enum('type', ['ARMOUR', 'WEAPON', 'GLOVES', 'BOOTS', 'RING', 'CLOAK', 'HELMET', 'PENDANT', 'AMULET', 'POTION', 'SCROLL']);
+            $table->boolean('can_be_repaired');
             $table->string('profile_img');
             $table->timestamps();
         });

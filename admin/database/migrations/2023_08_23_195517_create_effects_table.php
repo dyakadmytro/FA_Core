@@ -19,7 +19,7 @@ return new class extends Migration
             $table->enum('type', ['permanent', 'action']);
             $table->enum('direction', ['self', 'opponent']);
             $table->enum('fire_on_event', ['start', 'end', 'b4PlayerAct', 'afterPlayerAct', 'now', 'custom']);
-            $table->tinyInteger('value')->unsigned();
+            $table->tinyInteger('value');
             $table->enum('scale', ['point', 'percent']);
             $table->timestamps();
         });
