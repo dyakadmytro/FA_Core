@@ -16,6 +16,11 @@ return new class extends Migration
             $table->string('name', 52);
             $table->tinyText('description');
             $table->string('profile_img');
+            $table->enum('type', ['permanent', 'action']);
+            $table->enum('direction', ['self', 'opponent']);
+            $table->enum('fire_on_event', ['start', 'end', 'b4PlayerAct', 'afterPlayerAct', 'now', 'custom']);
+            $table->tinyInteger('value')->unsigned();
+            $table->enum('scale', ['point', 'percent']);
             $table->timestamps();
         });
     }
