@@ -2,6 +2,9 @@
 
 namespace App\Providers;
 
+use App\Factories\HeroFactory;
+use App\Services\FA\HeroService;
+use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -19,6 +22,9 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        //
+        $this->app->bind(HeroService::class, function (Application $app) {
+            $heroFactory = new HeroFactory();
+            return new HeroService($heroFactory);
+        });
     }
 }

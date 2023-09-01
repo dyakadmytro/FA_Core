@@ -5,15 +5,15 @@ namespace App\Models\FA;
 class Hero
 {
     private \App\Models\Hero $model;
-
+    // where to locate loot and effects
     public function __construct(
         \App\Models\Hero $model,
     )
     {
         $this->model = $model;
+        // create bag of loot
+        // create effects list or effects manager
     }
-
-    // Getters for each property
 
     public function getHeroId()
     {
