@@ -1,9 +1,11 @@
 <?php
 
-namespace App\Models\FA;
+namespace FA;
 
 
-class Effect extends FaModelAbstract
+use FA\Models\AbstractFAModel;
+
+class Effect extends AbstractFAModel
 {
     private \App\Models\Effect $model;
 
