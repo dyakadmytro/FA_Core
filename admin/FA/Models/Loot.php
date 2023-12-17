@@ -1,8 +1,10 @@
 <?php
 
-namespace App\Models\FA;
+namespace FA;
 
-class Loot extends FaModelAbstract
+use FA\Models\AbstractFAModel;
+
+class Loot extends AbstractFAModel
 {
     private \App\Models\Loot $model;
 
@@ -30,7 +32,7 @@ class Loot extends FaModelAbstract
     {
         return $this->model->type;
     }
-
+//todo profile image can be something abstractive. I future it can be animations set or some other type
     public function getProfileImage()
     {
         return $this->model->profile_img;
