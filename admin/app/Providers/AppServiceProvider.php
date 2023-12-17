@@ -2,8 +2,8 @@
 
 namespace App\Providers;
 
-use App\Factories\HeroFactory;
-use App\Services\FA\HeroService;
+use Factories\HeroFactory;
+use HeroService;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Support\ServiceProvider;
 

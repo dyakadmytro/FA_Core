@@ -1,10 +1,9 @@
 <?php
 
-namespace App\Services\FA;
 
-use App\Factories\HeroFactory;
-use App\Models\FA\Hero as HeroFA;
-use \App\Models\Hero;
+use App\Models\Hero;
+use FA\Models\Hero as HeroFA;
+use Factories\HeroFactory;
 
 class HeroService
 {
