@@ -1,19 +1,12 @@
 <?php
 
 
-use App\Models\Hero;
-use FA\Models\Hero as HeroFA;
-use Factories\HeroFactory;
+use \FA\Models\AbstractFAModel;
 
-class HeroService
+class HeroService extends \Contracts\AbstractFAModelServiceProvider
 {
-    private HeroFactory $heroFactory;
-    // composition or aggregation for factory?
-    public function __construct(HeroFactory $heroFactory) {
-        $this->heroFactory = $heroFactory;
-    }
 
-    public function createHero(Hero $hero ): HeroFA {
-        return $this->heroFactory->makeFromEloquent($hero);
+    public function create( $data ): AbstractFAModel {
+        return $this->modelFactory->makeFromEloquent($data);
     }
 }
